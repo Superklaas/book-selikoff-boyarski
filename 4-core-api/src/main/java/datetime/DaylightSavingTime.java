@@ -1,10 +1,12 @@
 package datetime;
 
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.Month;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.time.temporal.ChronoUnit;
 
 public class DaylightSavingTime {
 
@@ -34,6 +36,14 @@ public class DaylightSavingTime {
         System.out.println(dateTime.toInstant());
         System.out.println(dateTimePlusOneHour);
         System.out.println(dateTimePlusOneHour.toInstant());
+        System.out.println("-----------------");
+
+        /* Review question on daylight saving time */
+        LocalDate date1 = LocalDate.of(2022, 03, 13);
+        LocalTime time1 = LocalTime.of(02, 15);
+        ZonedDateTime zonedDateTime1 = ZonedDateTime.of(date1, time1, ZoneId.of("US/Eastern"));
+        System.out.println(zonedDateTime1);
+        System.out.println(zonedDateTime1.minus(Duration.ofHours(1)));
 
     }
 
