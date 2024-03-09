@@ -1,6 +1,6 @@
 package interfaces.default_method;
 
-public class Snake implements isColdBlooded {
+public class Snake implements isColdBlooded, isScaleddReptile {
 
     @Override
     public boolean hasScales() {
@@ -10,6 +10,11 @@ public class Snake implements isColdBlooded {
     @Override
     public double getTemperature() {
         return 12.0;
-//        return isColdBlooded.super.getTemperature();
     }
+
+    @Override
+    public int getNumberOfScales() {
+        return isScaleddReptile.super.getNumberOfScales();
+    }
+
 }

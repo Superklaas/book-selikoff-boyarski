@@ -20,6 +20,20 @@ class Main {
         var once = OnlyOne.ONCE;
         var twice = OnlyOne.ONCE;
         System.out.println("end");
+        System.out.println("------------");
+
+        for (Season season : Season.values()) {
+            String seasonalInformation = switch (season) {
+                case SUMMER, FALL, WINTER ->
+                        String.format("Opening hours in %s: %s with expected visitors %s and average temperature %s°C",
+                                season.name().toLowerCase(),
+                                season.getHours(),
+                                season.getExpectedVisitors(),
+                                season.getAverageTemperature());
+                default -> "Default";
+            };
+            System.out.println(seasonalInformation);
+        }
 
     }
 

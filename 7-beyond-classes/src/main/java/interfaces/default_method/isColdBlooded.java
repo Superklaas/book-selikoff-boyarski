@@ -8,4 +8,8 @@ public interface isColdBlooded {
         return 10.0;
     }
 
+    default int getNumberOfScales() {
+        return 20;
+    }
+
 }
