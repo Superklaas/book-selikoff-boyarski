@@ -1,4 +1,4 @@
-package interfaces.default_method;
+package interfaces.default_method.example1;
 
 public interface isColdBlooded {
 
