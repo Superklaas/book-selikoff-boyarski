@@ -20,11 +20,11 @@ public class Employee {
 
         private final int bonus;
 
-        public BonusCalculator(int bonus) {
+        private BonusCalculator(int bonus) {
             this.bonus = bonus;
         }
 
-        public int getYearlyBonusPay(int salary) {
+        private int getYearlyBonusPay(int salary) {
             return (salary + bonus)/MONTHS_PER_YEAR;
         }
 
