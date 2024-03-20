@@ -1,4 +1,4 @@
-package collection_api;
+package collection;
 
 import java.util.List;
 import java.util.Set;
