@@ -16,19 +16,20 @@ public class Polling {
         };
         Thread thread1 = new Thread(task); // thread1 performs task: augmenting counter to 10_000_000
         thread1.start();
+        long start = System.currentTimeMillis();
         System.out.println("process started");
 
         while (counter < 1_000_000) {
             System.out.println("process busy");
             try {
-                Thread.sleep(1);// mainThread sleeps for given time length, then check while condition again
+                Thread.sleep(100);// mainThread sleeps for given time length, then check while condition again
             } catch (InterruptedException e) {
                 System.out.println("process interrupted"); //mainThread is interrupted when counter reaches 10_000_000
             }
         }
 
         System.out.println("process ended");
-        System.out.println(counter);
+        System.out.println(System.currentTimeMillis() - start);
 
     }
 

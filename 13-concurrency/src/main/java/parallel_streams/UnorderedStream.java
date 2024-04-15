@@ -11,6 +11,7 @@ public class UnorderedStream {
                 .parallel()
                 .findAny()
                 .ifPresent(System.out::println);
+
         System.out.println("---------");
 
         Stream.of(1, 2, 3, 4, 5, 6)

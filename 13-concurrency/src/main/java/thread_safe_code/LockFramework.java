@@ -15,7 +15,7 @@ public class LockFramework {
         }
     }
 
-    public static void printHelloTryLockNoArgs(Lock lock) {
+    public static void printHelloTryLock(Lock lock) {
         if (lock.tryLock()) {
             try {
                 System.out.println("using method tryLock()");
@@ -27,7 +27,7 @@ public class LockFramework {
         }
     }
 
-    public static void printHelloTryLockArgs(Lock lock) throws InterruptedException {
+    public static void printHelloTryLockWithTimer(Lock lock) throws InterruptedException {
         if (lock.tryLock(20, TimeUnit.NANOSECONDS)) {
             try {
                 System.out.println("using method tryLock() with timeout 20 ns");
@@ -48,14 +48,14 @@ public class LockFramework {
         new Thread(() -> printHelloLock(lock)).start();
         new Thread(() -> printHelloLock(lock)).start();
 
-        new Thread(() -> printHelloTryLockNoArgs(lock)).start();
-        new Thread(() -> printHelloTryLockNoArgs(lock)).start();
-        new Thread(() -> printHelloTryLockNoArgs(lock)).start();
-        new Thread(() -> printHelloTryLockNoArgs(lock)).start();
+        new Thread(() -> printHelloTryLock(lock)).start();
+        new Thread(() -> printHelloTryLock(lock)).start();
+        new Thread(() -> printHelloTryLock(lock)).start();
+        new Thread(() -> printHelloTryLock(lock)).start();
 
         new Thread(() -> {
             try {
-                printHelloTryLockArgs(lock);
+                printHelloTryLockWithTimer(lock);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }

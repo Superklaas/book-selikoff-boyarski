@@ -41,10 +41,10 @@ public class LionPenManager {
         try {
             var lionPenManager = new LionPenManager();
             CyclicBarrier c1 = new CyclicBarrier(4);
-            CyclicBarrier c2 = new CyclicBarrier(4, () -> System.out.println("all pens have been cleaned"));
+            CyclicBarrier c2 = new CyclicBarrier(4, () -> System.out.println("***all pens have been cleaned"));
             for (int i = 0; i < 4; i++) {
                 service.submit(() -> lionPenManager.performTaskWithBarrier(c1, c2));
-                // service.submit(lionPenManager::performTaskWithoutBarrier);
+//                 service.submit(lionPenManager::performTaskWithoutBarrier);
             }
         } finally {
             service.shutdown();

@@ -22,12 +22,12 @@ public class ParallelDecomposition {
                 .forEachOrdered(i -> System.out.print(i + " "));
         System.out.println("sorted parallel stream: " + (System.currentTimeMillis() - start) + " ms");
 
-        // serial stream
-//        start = System.currentTimeMillis();
-//        list.stream()
-//                .map(ParallelDecomposition::doWork)
-//                .forEach(integer -> System.out.print(integer + " "));
-//        System.out.println("serial stream: " + (System.currentTimeMillis() - start) + " ms");
+        // serial stream: for each element in stream, 2 seconds will be taken
+        start = System.currentTimeMillis();
+        list.stream()
+                .map(ParallelDecomposition::doWork)
+                .forEach(integer -> System.out.print(integer + " "));
+        System.out.println("serial stream: " + (System.currentTimeMillis() - start) + " ms");
 
     }
 

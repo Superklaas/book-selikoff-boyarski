@@ -18,35 +18,47 @@ public class Bear {
 
     void eatAndDrink(Food food, Beverage water) {
         ReentrantLock lock = new ReentrantLock();
-        try {
-            lock.lock();
-            System.out.println(this.getName() + " eating " + food);
-        } finally {
-            lock.unlock();
+        if (lock.tryLock()) {
+            try {
+                System.out.println(this.getName() + " eating " + food);
+            } finally {
+                lock.unlock();
+            }
+        } else {
+            System.out.println("unable to acquire lock");
         }
         move();
-        try {
-            lock.lock();
-            System.out.println(this.getName() + " drinking " + water);
-        } finally {
-            lock.unlock();
+        if (lock.tryLock()) {
+            try {
+                System.out.println(this.getName() + " drinking " + water);
+            } finally {
+                lock.unlock();
+            }
+        } else {
+            System.out.println("unable to acquire lock");
         }
     }
 
     void drinkAndEat(Beverage water, Food food) {
         ReentrantLock lock = new ReentrantLock();
-        try {
-            lock.lock();
-            System.out.println(this.getName() + " drinking " + water);
-        } finally {
-            lock.unlock();
+        if (lock.tryLock()) {
+            try {
+                System.out.println(this.getName() + " drinking " + water);
+            } finally {
+                lock.unlock();
+            }
+        } else {
+            System.out.println("unable to acquire lock");
         }
-        this.move();
-        try {
-            lock.lock();
-            System.out.println(this.getName() + " eating " + food);
-        } finally {
-            lock.unlock();
+        move();
+        if (lock.tryLock()) {
+            try {
+                System.out.println(this.getName() + " eating " + food);
+            } finally {
+                lock.unlock();
+            }
+        } else {
+            System.out.println("unable to acquire lock");
         }
     }
 

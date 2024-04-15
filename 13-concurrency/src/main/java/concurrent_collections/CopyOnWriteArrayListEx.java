@@ -7,6 +7,7 @@ public class CopyOnWriteArrayListEx {
 
     public static void main(String[] args) {
         CopyOnWriteArrayList<Integer> list = new CopyOnWriteArrayList<>(List.of(1,2,3));
+        System.out.println(list);
         for (Integer i : list) {
             list.add(i + 3);
         }

@@ -11,28 +11,13 @@ public class SynchronizedListEx2 {
         List<String> list = new ArrayList<>();
         List<String> synchronizedList = Collections.synchronizedList(list);
 
-        // Thread 1
-        new Thread(() -> {
-            synchronized (synchronizedList) {
-                synchronizedList.add("Thread 1");
-            }
-        }).start();
+        new Thread(() -> synchronizedList.add("Thread1")).start();
+        new Thread(() -> synchronizedList.add("Thread2")).start();
 
-        // Thread 2
-        new Thread(() -> {
-            synchronized (synchronizedList) {
-                synchronizedList.add("Thread 2");
-            }
-        }).start();
-
-        // Ensure threads finish before accessing synchronizedList
         Thread.sleep(1000);
 
-        // Access synchronizedList safely
-        synchronized (synchronizedList) {
-            for (String str : synchronizedList) {
-                System.out.println(str);
-            }
+        for (String str : synchronizedList) {
+            System.out.println(str);
         }
 
     }

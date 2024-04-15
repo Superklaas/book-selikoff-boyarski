@@ -10,7 +10,6 @@ public class DaemonThread {
         thread.start();
         System.out.println(thread.getState());
         System.out.println("main method finished");
-        System.out.println(thread.getState());
     }
 
     static void pause() {

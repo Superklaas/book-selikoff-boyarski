@@ -8,12 +8,10 @@ import java.util.List;
 public class SynchronizedListEx {
 
     public static void main(String[] args) {
-        List<Integer> list = new ArrayList<>(List.of(1,2,3));
+        List<Integer> list = new ArrayList<>(List.of(1, 2, 3));
         List<Integer> synchronizedList = Collections.synchronizedList(list);
-        synchronized (synchronizedList) {
-            for (Integer integer : synchronizedList) {
-                System.out.println(integer);
-            }
+        for (Integer integer : synchronizedList) {
+            System.out.println(integer);
         }
     }
 
