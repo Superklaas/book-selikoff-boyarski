@@ -9,6 +9,11 @@ public class LegacyIoOperations {
 
     public static void main(String[] args) throws IOException {
 
+        File nonExistentFile = new File("home");
+        System.out.println("File exists: " + nonExistentFile.exists());
+        System.out.println("Is file: " + nonExistentFile.isFile());
+        System.out.println("---------------");
+
         File file = new File("test-directory\\test.txt");
         System.out.println("Relative file name: " + file.getName());
         System.out.println("Parent directory: " + file.getParent());
