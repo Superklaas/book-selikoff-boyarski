@@ -12,8 +12,11 @@ public class DaylightSavingTime {
 
     public static void main(String[] args) {
 
-        /* Time change Sunday March 13 2AM. (begin zomertijd)
-        *  If you advance one hour, the hour jumps one hour extra and the offset changes. */
+        /**
+         * SPRING = SPRING FORWARD
+         * Time change Sunday March 13 2AM. (begin zomertijd)
+         * If you advance one hour, the hour jumps one hour extra forward.
+         * The offset changes from GMT-5 to GMT-4. */
         var date = LocalDate.of(2022, Month.MARCH, 13);
         var time = LocalTime.of(1, 30);
         var zone = ZoneId.of("US/Eastern");
@@ -25,8 +28,11 @@ public class DaylightSavingTime {
         System.out.println(dateTimePlusOneHour.toInstant());
         System.out.println("-----------------");
 
-        /* Time change Sunday November 6 2AM. (begin wintertijd)
-         *  If you advance one hour, the hour jumps one hour extra and the offset changes. */
+        /**
+         * FALL = FALL BACK
+         * Time change Sunday November 6 2AM. (begin wintertijd)
+         * If you advance one hour, the hour stays the same.
+         * The offset changes from GMT-4 to GMT-5.  */
         date = LocalDate.of(2022, Month.NOVEMBER, 6);
         time = LocalTime.of(1, 30);
         zone = ZoneId.of("US/Eastern");
@@ -43,7 +49,7 @@ public class DaylightSavingTime {
         LocalTime time1 = LocalTime.of(02, 15);
         ZonedDateTime zonedDateTime1 = ZonedDateTime.of(date1, time1, ZoneId.of("US/Eastern"));
         System.out.println(zonedDateTime1);
-        System.out.println(zonedDateTime1.minus(Duration.ofHours(1)));
+        System.out.println(zonedDateTime1.minus(1L, ChronoUnit.HOURS));
 
     }
 
