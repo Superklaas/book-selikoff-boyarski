@@ -5,8 +5,8 @@ import pond.shore.Bird;
 public class Gosling extends Bird {
 
     public void swim() {
-        floatingInWater();
-        System.out.print(text);
+        floatingInWater(); // protected method from Bird
+        System.out.print(text); // protected field from Bird
     }
 
     public static void main(String[] args) {

@@ -8,5 +8,4 @@ public class Bird {
         System.out.print(text);
     }
 
-
 }
