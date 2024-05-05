@@ -16,7 +16,7 @@ public interface ZooRenovation {
     }
 
     default void printStatus() {
-        System.out.printf("Project %s with status %s and budget %s", projectName(), status(), budget());
+        System.out.printf("Project %s with status %s and budget %s%n", projectName(), status(), budget());
     }
 
 }

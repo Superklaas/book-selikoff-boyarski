@@ -14,19 +14,22 @@ public class Main {
         System.out.println(joe.equals(klaas));
         System.out.printf("%s - %s%n", joe.hashCode(), klaas.hashCode());
 
+        // cannonical constructor
         Whale bernie = new Whale(190, "Bernie");
         System.out.println(bernie.length());
         System.out.println(bernie.name());
         System.out.println(bernie);
         System.out.println(bernie.hashCode());
 
-        Shark attila = new Shark(100, "attila");
-        System.out.println(attila);
-        Shark attila1 = new Shark(100, "ATTILA");
-        System.out.println(attila1);
-
+        // overloaded constructor
         SwordFish swordFish = new SwordFish("JOHN", "COCKERILL");
         System.out.println(swordFish);
+
+        // compact constructor
+        Shark attila = new Shark(100, "attila");
+        System.out.println(attila);
+        Shark attila1 = new Shark(-1, "ATTILA");
+        System.out.println(attila1);
 
     }
 

@@ -30,7 +30,9 @@ public class Home {
     }
 
     abstract class Room {
+
         abstract void sayHi();
+
     }
 
 }

@@ -12,9 +12,4 @@ public class Lemur extends Primate implements HasTail {
         return true;
     }
 
-    public void sortAndPrintZooAnimals(List<String> animals) {
-        Collections.sort(animals);
-        animals.forEach(System.out::println);
-    }
-
 }

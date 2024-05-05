@@ -20,4 +20,8 @@ class Squirrel {
         new Fox().new Den();
     }
 
+    public static void staticMethod() {
+        new Fox().new Den();
+    }
+
 }

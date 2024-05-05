@@ -1,6 +1,6 @@
 package interfaces.default_method.example1;
 
-public interface isColdBlooded {
+public interface IsColdBlooded {
 
     boolean hasScales();
 

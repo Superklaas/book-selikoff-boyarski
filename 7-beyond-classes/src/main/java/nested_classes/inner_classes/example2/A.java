@@ -13,7 +13,6 @@ public class A {
             void printX() {
                 int x = 3;
                 System.out.println(x);
-                System.out.println(x);
                 System.out.println(B.this.x);
                 System.out.println(A.this.x);
             }

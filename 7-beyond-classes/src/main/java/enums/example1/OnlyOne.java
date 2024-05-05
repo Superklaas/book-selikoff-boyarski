@@ -1,4 +1,4 @@
-package enums;
+package enums.example1;
 
 public enum OnlyOne {
 

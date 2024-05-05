@@ -9,13 +9,13 @@ public class PrintNumbers {
     }
 
     public void calculate(int width) {
-        class Calculator {
+        final class Calculator {
             void multiply() {
-//                System.out.println(width * length);
+                System.out.println(width * length);
             }
         }
         new Calculator().multiply();
-        width = 2;
+//        width = 2;
     }
 
     public static void main(String[] args) {
