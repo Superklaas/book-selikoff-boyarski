@@ -7,6 +7,13 @@ public class CallingConstructor {
     }
 
     String createEmptyString() {
+//        StringCreator stringCreator = new StringCreator() {
+//            @Override
+//            public String create() {
+//                return new String();
+//            }
+//        };
+//        StringCreator stringCreator = () -> new String();
         StringCreator stringCreator = String::new;
         return stringCreator.create();
     }

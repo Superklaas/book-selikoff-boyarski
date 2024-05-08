@@ -3,9 +3,7 @@ package method_references;
 public class Duckling {
 
     interface LearnToSpeak {
-
         void speak(String sound);
-
     }
 
     public void makeSound_anonymousClass(String sound) {
