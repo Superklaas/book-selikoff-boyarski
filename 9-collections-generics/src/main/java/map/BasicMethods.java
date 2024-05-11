@@ -9,22 +9,22 @@ public class BasicMethods {
 
     public static void main(String[] args) {
 
-        HashMap<String, String> hashMap = new HashMap<>();
-        hashMap.put("lion", "meat");
-        hashMap.put("giraffe", "leaves");
-        hashMap.put("panda", "bamboo");
-        System.out.println(hashMap);
-        System.out.println(hashMap.get("klaas"));
-        for (String value : hashMap.values()) {
-            System.out.println(value);
+        HashMap<String, String> foodMap = new HashMap<>();
+        foodMap.put("lion", "meat");
+        foodMap.put("giraffe", "leaves");
+        foodMap.put("panda", "bamboo");
+        System.out.println(foodMap);
+        System.out.println(foodMap.get("klaas"));
+        for (String value : foodMap.values()) {
+            System.out.print(value + "-");
         }
-        System.out.println("---------");
+        System.out.println("\n---------");
 
-        TreeMap<String, String> treeMap = new TreeMap<>(hashMap);
+        TreeMap<String, String> treeMap = new TreeMap<>(foodMap);
         System.out.println(treeMap);
         System.out.println(treeMap.remove("lion"));
         System.out.println(treeMap.remove("klaas"));
-        System.out.println(treeMap.replace("giraffe", "whitewidow"));
+        System.out.println(treeMap.replace("giraffe", "white widow"));
         System.out.println(treeMap);
         treeMap.replaceAll((key, value) -> key.concat(value).toUpperCase().concat("$$$$"));
         System.out.println(treeMap);

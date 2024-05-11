@@ -1,4 +1,6 @@
-package sorting;
+package sorting.comparable;
+
+import sorting.Duck;
 
 import java.util.Collections;
 import java.util.List;

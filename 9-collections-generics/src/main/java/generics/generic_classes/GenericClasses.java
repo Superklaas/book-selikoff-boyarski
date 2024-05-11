@@ -1,4 +1,4 @@
-package generics;
+package generics.generic_classes;
 
 public class GenericClasses {
 
@@ -18,20 +18,3 @@ public class GenericClasses {
 
 }
 
-class Crate<T> {
-
-    T content;
-
-    public T getContent() {
-        return content;
-    }
-
-    public void setContent(T content) {
-        this.content = content;
-    }
-
-}
-
-record Elephant(String name) {}
-
-record Robot(String name) {}

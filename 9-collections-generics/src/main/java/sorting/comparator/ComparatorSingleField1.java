@@ -1,15 +1,16 @@
-package sorting;
+package sorting.comparator;
 
-import java.util.ArrayList;
+import sorting.Duck;
+
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
 /**
- * Sorting by custom comparator (friendliness).
- * Use anonymous class for implementation Comaparator.
+ * Sorting by custom comparator (friendliness descending).
+ * Use anonymous class for implementation Comparator.
  */
-public class ComparatorEx1 {
+public class ComparatorSingleField1 {
 
     public static void main(String[] args) {
         Comparator<Duck> comparator = new Comparator<>() {
