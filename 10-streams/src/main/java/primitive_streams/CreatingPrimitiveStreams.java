@@ -11,7 +11,7 @@ public class CreatingPrimitiveStreams {
         IntStream intStream = IntStream.of(1, 2);
         LongStream generate = LongStream.generate(() -> Math.round(Math.random() * 100));
         IntStream range = IntStream.rangeClosed(1, 10);
-        range.forEach(System.out::println);
+        range.forEach(i -> System.out.print(i + "-"));
     }
 
 }

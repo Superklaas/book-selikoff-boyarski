@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.Spliterator;
 import java.util.stream.Stream;
 
+/**
+ * Example spliterator for finite stream
+ */
 public class SpliteratorEx1 {
 
     public static void main(String[] args) {

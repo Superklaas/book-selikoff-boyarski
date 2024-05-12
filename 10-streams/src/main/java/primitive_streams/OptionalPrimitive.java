@@ -13,9 +13,11 @@ public class OptionalPrimitive {
 
         OptionalInt i = IntStream.rangeClosed(1,10).max();
         i.ifPresent(System.out::println);
-        int i1 = i.orElseGet(() -> 1);
+        System.out.println(i.orElseGet(() -> 1));
 
-        OptionalDouble average = DoubleStream.generate(Math::random).limit(3).average();
+        OptionalDouble average = DoubleStream.generate(Math::random)
+                .limit(3)
+                .average();
         average.ifPresent(System.out::println);
 
         OptionalLong min = LongStream.iterate(100, n -> n > 0, n -> n - 5).min();

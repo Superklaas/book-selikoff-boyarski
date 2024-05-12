@@ -1,6 +1,9 @@
 package optionals;
 
+import java.util.Arrays;
 import java.util.Optional;
+import java.util.OptionalDouble;
+import java.util.stream.IntStream;
 
 public class OptionalEx {
 

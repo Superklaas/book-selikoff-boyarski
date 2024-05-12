@@ -15,7 +15,7 @@ public class MinMax {
         System.out.printf("Shortest mammal: %s%n", shortestMammal);
 
         String longestMammal = marineMammals.stream()
-                .max(Comparator.comparingInt(String::length))
+                .max((a,b) -> a.length() - b.length())
                 .orElseThrow();
         System.out.printf("Longest mammal: %s%n", longestMammal);
 

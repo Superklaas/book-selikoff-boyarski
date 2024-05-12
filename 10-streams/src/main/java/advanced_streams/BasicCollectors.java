@@ -1,5 +1,6 @@
 package advanced_streams;
 
+import java.util.IntSummaryStatistics;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -7,6 +8,7 @@ import java.util.Optional;
 import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class BasicCollectors {
@@ -21,7 +23,7 @@ public class BasicCollectors {
         Double averageInt = getIntegerStream().collect(Collectors.averagingInt(n -> n * 3));
         System.out.println(averageInt);
 
-        // count
+        // counting
         Long count = getIntegerStream().collect(Collectors.counting());
         System.out.println(count);
 
@@ -34,9 +36,13 @@ public class BasicCollectors {
         String joinedString = getStringStream().collect(Collectors.joining(""));
         System.out.println(joinedString);
 
+        // equivalent using String.join
+        String joinedString2 = String.join("", "Klaas", "Elodie", "Sunday", "Augustin");
+        System.out.println(joinedString2);
+
         // maxBy
-        Optional<String> max = getStringStream().collect(Collectors.maxBy((a,b) -> a.length() - b.length()));
-        max.ifPresent(System.out::println);
+        Optional<String> longestString = getStringStream().collect(Collectors.maxBy((a,b) -> a.length() - b.length()));
+        longestString.ifPresent(System.out::println);
 
         // mapping: map().count()
         String mapping = getIntegerStream().collect(Collectors.mapping(n -> "" + n * 2, Collectors.joining(",")));
@@ -46,6 +52,10 @@ public class BasicCollectors {
         Map<Boolean, List<String>> partitioningBy =
                 getStringStream().collect(Collectors.partitioningBy(s -> s.length() == 6));
         System.out.println(partitioningBy);
+
+        // summarizingDouble: get summarizing statistics of primitive stream
+        IntSummaryStatistics summaryStatistics = getIntegerStream().collect(Collectors.summarizingInt(i -> i * 2));
+        System.out.println(summaryStatistics);
 
         // toCollection: create collection cf. given Supplier
         TreeSet<String> treeSet = getStringStream().collect(Collectors.toCollection(TreeSet::new));
