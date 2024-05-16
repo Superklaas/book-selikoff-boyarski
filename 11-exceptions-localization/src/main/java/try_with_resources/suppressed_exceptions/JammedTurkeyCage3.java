@@ -1,5 +1,10 @@
 package try_with_resources.suppressed_exceptions;
 
+/**
+ * Suppressed exceptions are only kept when the (primary) exception is thrown in try block.
+ * Exceptions thrown in finally block (bad practice!) prevail.
+ * In this case, the suppressed exceptions get lost.
+ */
 public class JammedTurkeyCage3 implements AutoCloseable {
 
     @Override

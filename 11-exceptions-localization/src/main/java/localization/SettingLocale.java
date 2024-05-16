@@ -2,7 +2,10 @@ package localization;
 
 import java.util.Locale;
 
-public class SelectingLocale {
+/**
+ * Setting locale: default, constants, constructor, builder
+ */
+public class SettingLocale {
 
     public static void main(String[] args) {
 
@@ -17,15 +20,13 @@ public class SelectingLocale {
         System.out.println(Locale.GERMAN);
         System.out.println(Locale.GERMANY);
         System.out.println(Locale.JAPAN);
+        System.out.println(Locale.JAPANESE);
         System.out.println("-------------");
 
         // Locale constructors
-        Locale de = new Locale("de");
-        Locale deAT = new Locale("de", "AT");
-        Locale deLI = new Locale("de", "LI");
-        System.out.println(de);
-        System.out.println(deLI);
-        System.out.println(deAT);
+        System.out.println(new Locale("de"));
+        System.out.println(new Locale("de", "LI"));
+        System.out.println(new Locale("de", "AT"));
         System.out.println("-------------");
 
         // Locale builders

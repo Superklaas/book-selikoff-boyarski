@@ -3,7 +3,7 @@ package exception_classes;
 public class HelpfulNPE {
 
     public static void main(String[] args) {
-        Dog dog = new Dog(null);
+//        Dog dog = new Dog(null);
         Frog frog = new Frog(null);
     }
 

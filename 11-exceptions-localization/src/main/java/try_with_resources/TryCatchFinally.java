@@ -17,13 +17,16 @@ public class TryCatchFinally {
             // read data from inputStream
             // write data to outputStream
         } catch (IOException e) {
-            e.printStackTrace();
+            // handling exception
         } finally {
             try {
-                inputStream.close();
+                if (inputStream != null) {
+                    inputStream.close();
+                }
+                assert outputStream != null;
                 outputStream.close();
             } catch (IOException e) {
-                e.printStackTrace();
+                // handling exception
             }
         }
     }

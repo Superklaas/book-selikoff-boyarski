@@ -1,5 +1,8 @@
 package try_with_resources.suppressed_exceptions;
 
+/**
+ * Call getSuppressed() on Throwable object.
+ */
 public class JammedTurkeyCage implements AutoCloseable{
 
     @Override

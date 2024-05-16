@@ -20,10 +20,11 @@ public class FormattingNumbers {
         System.out.println(format4.format(numberDouble));
         System.out.println("-----------");
 
-        System.out.println(format1.format(numberLong));
-        System.out.println(format2.format(numberLong));
-        System.out.println(format3.format(numberLong));
-        System.out.println(format4.format(numberLong));
+        System.out.println(format1.format(numberLong)); // 001,234,567.00000
+        System.out.println(format2.format(numberLong)); // 1,234,567.00000
+        System.out.println(format3.format(numberLong)); // 1,234,567
+        System.out.println(format4.format(numberLong)); // Your balance: $1,234,567
+        System.out.println("-----------");
 
         String string1234 = new DecimalFormat("###,###.00").format(1234);
         System.out.println(string1234);

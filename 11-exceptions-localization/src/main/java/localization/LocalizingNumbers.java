@@ -3,21 +3,21 @@ package localization;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-public class FormattingNumbers {
+public class LocalizingNumbers {
 
     public static void main(String[] args) {
 
-        // NUMBERS
+        // NUMBERS: getInstance(Locale) or getNumberInstance(Locale)
 
         NumberFormat germanNumberFormatter = NumberFormat.getInstance(Locale.GERMANY);
         String germanNumber = germanNumberFormatter.format(123.45);
         System.out.println(germanNumber);
 
-        NumberFormat chineseNumberFormatter = NumberFormat.getInstance(Locale.CHINA);
+        NumberFormat chineseNumberFormatter = NumberFormat.getNumberInstance(Locale.CHINA);
         String chineseNumber = chineseNumberFormatter.format(123.45);
         System.out.println(chineseNumber);
 
-        // CURRENCY
+        // CURRENCY: getCurrencyInstance(Locale)
 
         NumberFormat germanCurrencyFormatter = NumberFormat.getCurrencyInstance(Locale.GERMANY);
         String germanCurrency = germanCurrencyFormatter.format(123.45);
@@ -27,11 +27,11 @@ public class FormattingNumbers {
         String chineseCurrency = chineseCurrencyFormatter.format(123.45);
         System.out.println(chineseCurrency);
 
-        NumberFormat frenchCurrencyFormatter = NumberFormat.getCurrencyInstance(Locale.FRANCE);
+        NumberFormat frenchCurrencyFormatter = NumberFormat.getCurrencyInstance(Locale.UK);
         String frenchCurrency = frenchCurrencyFormatter.format(123.45);
         System.out.println(frenchCurrency);
 
-        // PERCENTAGE
+        // PERCENTAGE: getPercentInstance(Locale)
 
         NumberFormat germanPercentageFormatter = NumberFormat.getPercentInstance(Locale.GERMANY);
         String germanPercentage = germanPercentageFormatter.format(123.45);

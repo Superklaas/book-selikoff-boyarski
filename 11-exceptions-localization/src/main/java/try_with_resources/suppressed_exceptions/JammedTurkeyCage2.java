@@ -1,5 +1,8 @@
 package try_with_resources.suppressed_exceptions;
 
+/**
+ * Suppressed exceptions show in stack trace.
+ */
 public class JammedTurkeyCage2 implements AutoCloseable{
 
     @Override

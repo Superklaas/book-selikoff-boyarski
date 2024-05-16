@@ -8,7 +8,7 @@ public class ParsingNumbers {
 
     public static void main(String[] args) throws ParseException {
 
-        // NUMBER
+        // NUMBER: decimal separator cf. chosen locale
 
         Number usaNumber = NumberFormat.getInstance(Locale.US).parse("123.45");
         Number frenchNumberPeriod = NumberFormat.getInstance(Locale.FRANCE).parse("123.45");
@@ -19,9 +19,9 @@ public class ParsingNumbers {
         System.out.println(frenchNumberComma);
         System.out.println("---------------");
 
-        // CURRENCY
+        // CURRENCY: decimal separator & currency symbol cf. chosen locale
 
-        Number usaCurrency = NumberFormat.getCurrencyInstance(Locale.US).parse("$123.45");
+        Number usaCurrency = NumberFormat.getCurrencyInstance(Locale.US).parse("€123.45");
         System.out.println(usaCurrency);
 
     }
