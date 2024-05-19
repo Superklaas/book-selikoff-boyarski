@@ -3,12 +3,10 @@ package threads;
 public class DaemonThread {
 
     public static void main(String[] args) {
-        Runnable task = DaemonThread::pause;
+        Runnable task = () -> pause();
         Thread thread = new Thread(task);
-        System.out.println(thread.getState());
         thread.setDaemon(true);
         thread.start();
-        System.out.println(thread.getState());
         System.out.println("main method finished");
     }
 

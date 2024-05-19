@@ -17,7 +17,8 @@ public class ThreadPools {
         Runnable task2 = () -> IntStream.range(200,210).forEach(System.out::println);
         Runnable task3 = () -> IntStream.range(300,310).forEach(System.out::println);
 
-        long start = System.nanoTime();
+//        long start = System.nanoTime();
+        long start = System.currentTimeMillis();
 
         try {
             executorService.submit(task0);
@@ -37,7 +38,8 @@ public class ThreadPools {
             Thread.currentThread().interrupt();
         }
 
-        System.out.println("Elapsed time: " + (System.nanoTime() - start) + " nanoseconds");
+//        System.out.println("Elapsed time: " + (System.nanoTime() - start) + " nanoseconds");
+        System.out.println("Elapsed time: " + (System.currentTimeMillis() - start) + " milliseconds");
 
     }
 

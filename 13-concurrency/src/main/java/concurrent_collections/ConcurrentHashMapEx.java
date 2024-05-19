@@ -7,8 +7,8 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ConcurrentHashMapEx {
 
     public static void main(String[] args) {
-        Map<Integer, String> map = new ConcurrentHashMap<>();
-//        Map<Integer, String> map = new HashMap<>();
+//        Map<Integer, String> map = new ConcurrentHashMap<>();
+        Map<Integer, String> map = new HashMap<>();
         map.put(1, "sunday");
         map.put(2, "augustin");
         for (Integer key : map.keySet()) { // ConcurrentModificationException at runtime

@@ -6,7 +6,7 @@ import java.util.concurrent.Executors;
 
 public class LionPenManager {
 
-    public static final int NUMBER_OF_THREADS = 4;
+    public static final int NUMBER_OF_EMPLOYEES = 4;
 
     /**
      * No cyclic barrier.
@@ -37,12 +37,12 @@ public class LionPenManager {
     }
 
     public static void main(String[] args) {
-        var service = Executors.newFixedThreadPool(NUMBER_OF_THREADS);
+        var service = Executors.newFixedThreadPool(NUMBER_OF_EMPLOYEES);
         try {
             var lionPenManager = new LionPenManager();
-            CyclicBarrier c1 = new CyclicBarrier(4);
-            CyclicBarrier c2 = new CyclicBarrier(4, () -> System.out.println("***all pens have been cleaned"));
-            for (int i = 0; i < 4; i++) {
+            CyclicBarrier c1 = new CyclicBarrier(NUMBER_OF_EMPLOYEES);
+            CyclicBarrier c2 = new CyclicBarrier(NUMBER_OF_EMPLOYEES, () -> System.out.println("***all pens have been cleaned"));
+            for (int i = 0; i < NUMBER_OF_EMPLOYEES; i++) {
                 service.submit(() -> lionPenManager.performTaskWithBarrier(c1, c2));
 //                 service.submit(lionPenManager::performTaskWithoutBarrier);
             }

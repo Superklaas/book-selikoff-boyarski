@@ -16,7 +16,7 @@ public class Bear {
         return name;
     }
 
-    void eatAndDrink(Food food, Beverage water) {
+    void eatAndDrink(Food food, Beverage beverage) {
         ReentrantLock lock = new ReentrantLock();
         if (lock.tryLock()) {
             try {
@@ -30,7 +30,7 @@ public class Bear {
         move();
         if (lock.tryLock()) {
             try {
-                System.out.println(this.getName() + " drinking " + water);
+                System.out.println(this.getName() + " drinking " + beverage);
             } finally {
                 lock.unlock();
             }
@@ -39,11 +39,11 @@ public class Bear {
         }
     }
 
-    void drinkAndEat(Beverage water, Food food) {
+    void drinkAndEat(Beverage beverage, Food food) {
         ReentrantLock lock = new ReentrantLock();
         if (lock.tryLock()) {
             try {
-                System.out.println(this.getName() + " drinking " + water);
+                System.out.println(this.getName() + " drinking " + beverage);
             } finally {
                 lock.unlock();
             }
@@ -65,7 +65,7 @@ public class Bear {
     void move() {
         try {
             System.out.println(this.getName() + " moving");
-            Thread.sleep(1000);
+            Thread.sleep(1_000);
         } catch (InterruptedException e) {
             System.out.println("thread interrupted");
         }
@@ -75,7 +75,7 @@ public class Bear {
         ExecutorService executorService = Executors.newFixedThreadPool(10);
         Bear klaas = new Bear("klaas");
         Bear pablo = new Bear("pablo");
-        Food food = new Food("cookies");
+        Food food = new Food("pizza calzone");
         Beverage beverage = new Beverage("beer");
         try {
             executorService.submit(() -> klaas.eatAndDrink(food, beverage));

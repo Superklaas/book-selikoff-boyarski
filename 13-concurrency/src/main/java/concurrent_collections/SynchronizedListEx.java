@@ -11,7 +11,7 @@ public class SynchronizedListEx {
         List<Integer> list = new ArrayList<>(List.of(1, 2, 3));
         List<Integer> synchronizedList = Collections.synchronizedList(list);
         for (Integer integer : synchronizedList) {
-            System.out.println(integer);
+            System.out.println(synchronizedList);
         }
     }
 
