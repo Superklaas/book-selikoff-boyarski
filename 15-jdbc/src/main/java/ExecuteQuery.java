@@ -11,8 +11,8 @@ public class ExecuteQuery {
 
     public static void main(String[] args) {
         try (var conn = DriverManager.getConnection(URL);
-             var ps = conn.prepareStatement(SQL)) {
-            ResultSet rs = ps.executeQuery();
+             var ps = conn.prepareStatement(SQL);
+             var rs = ps.executeQuery();) {
             while (rs.next()) {
                 System.out.println(rs.getString("NAME"));
             }

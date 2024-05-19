@@ -13,7 +13,7 @@ public class CallingStoredProcedures {
 
             // procedure without parameters
             String sql = "{call read_e_names()}";
-            try (CallableStatement cs = conn.prepareCall(sql, ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+            try (CallableStatement cs = conn.prepareCall(sql);
                  ResultSet rs = cs.executeQuery()) {
                 while (rs.next()) {
                     System.out.println(rs.getString(1));
@@ -22,7 +22,7 @@ public class CallingStoredProcedures {
 
             // procedure with IN parameter
             sql = "{call read_names_by_letter(?)}";
-            try (CallableStatement cs = conn.prepareCall(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE)) {
+            try (CallableStatement cs = conn.prepareCall(sql)) {
                 cs.setString(1, "E");
                 try (ResultSet rs = cs.executeQuery()) {
                     while (rs.next()) {
