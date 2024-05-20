@@ -7,8 +7,8 @@ public class ImmutablePath {
     public static void main(String[] args) {
         Path path = Path.of("whale");
         Path krill = path.resolve("krill");
-        System.out.println(path); // whale
-        System.out.println(krill);
+        System.out.println(path);  // whale
+        System.out.println(krill); // whale\krill
     }
 
 }

@@ -15,19 +15,15 @@ public class SystemStreams {
         System.err.println("hello");
 
         //input stream: System.in
-        InputStream inputStream = System.in;
-        InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-        try(BufferedReader bufferedReader = new BufferedReader(inputStreamReader)) {
-            String userInput = bufferedReader.readLine();
-            System.out.println("You entered: " + userInput);
-        }
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        String userInput = bufferedReader.readLine();
+        System.out.println("You entered: " + userInput);
 
         //closing System.out
         try (PrintStream out = System.out) {}
         System.out.println("print after closing System.out"); // nothing printed
 
         //closing System.in
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         try (bufferedReader) {}
         String inputData = bufferedReader.readLine(); // IOException
 

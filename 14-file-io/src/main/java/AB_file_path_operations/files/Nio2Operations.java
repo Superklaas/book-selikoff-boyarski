@@ -5,6 +5,8 @@ import java.nio.file.Files;
 import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Nio2Operations {
@@ -23,10 +25,10 @@ public class Nio2Operations {
         System.out.println("Number of bytes in file: " + Files.size(path));
         if (Files.isDirectory(path)) {
             try(Stream<Path> entries = Files.list(path)) {
-                entries.forEach(System.out::println);
+                System.out.println(entries.collect(Collectors.toList()));
             }
         }
-        System.out.println("Renamed file: " + Files.move(path, Path.of("test-directory\\testje.txt"), LinkOption.NOFOLLOW_LINKS, StandardCopyOption.REPLACE_EXISTING));
+//        System.out.println("Renamed file: " + Files.move(path, Path.of("test-directory\\testje.txt"), LinkOption.NOFOLLOW_LINKS, StandardCopyOption.REPLACE_EXISTING));
         System.out.println("-----------");
 
         Path parentDirectory = path.getParent();

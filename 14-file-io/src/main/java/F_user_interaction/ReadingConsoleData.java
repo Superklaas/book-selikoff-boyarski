@@ -35,7 +35,7 @@ public class ReadingConsoleData {
         // read sensitive data with console.readPassword()
         if (console != null) {
             char[] userInput = console.readPassword("Enter your password: ");
-            console.writer().println("You entered: " + new String(userInput));
+            console.writer().println("You entered: " + Arrays.toString(userInput));
         } else {
             System.err.println("Console not available");
         }

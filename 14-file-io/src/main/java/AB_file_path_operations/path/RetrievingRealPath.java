@@ -8,8 +8,11 @@ public class RetrievingRealPath {
 
     public static void main(String[] args) throws IOException {
 
-        Path realPath = Paths.get(".").toRealPath();
-        System.out.println(realPath);
+        Path realPath1 = Paths.get(".").toRealPath();
+        System.out.println(realPath1);
+
+        Path realPath2 = Paths.get("..").toRealPath();
+        System.out.println(realPath2);
 
     }
 

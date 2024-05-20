@@ -64,7 +64,7 @@ public class FilesMethods {
         System.out.println(Files.readString(outputBuffered));
         System.out.println("-----------------");
 
-        // create buffered I/O streams for given path with factory method
+        // create buffered I/O streams for given path with constructor: Path -> File -> FileReader -> BufferedReader
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(input.toFile()));
              BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(outputBuffered.toFile()))) {
             String line = bufferedReader.readLine();
@@ -76,7 +76,6 @@ public class FilesMethods {
         }
         System.out.println(Files.readString(outputBuffered));
         System.out.println("-----------------");
-
 
     }
 

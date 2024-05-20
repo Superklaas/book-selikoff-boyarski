@@ -9,6 +9,7 @@ import java.io.Writer;
 public class LowLevelStreamPerByte {
 
     /**
+     * BINARY DATA
      * Read binary data byte per byte from InputStream using no-args method read().
      * Write binary data byte per byte to OutputStream using no-args method write().
      */
@@ -20,6 +21,7 @@ public class LowLevelStreamPerByte {
     }
 
     /**
+     * CHARACTER DATA
      * Read character data byte per byte from Reader using no-args method read().
      * Write character data byte per byte to OutputStream using no-args method write().
      */

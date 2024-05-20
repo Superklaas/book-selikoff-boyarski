@@ -30,11 +30,10 @@ public class TraversingDirectory {
     }
 
     void printPathTxtFiles(Path path) throws IOException {
-        Stream<Path> streamTxtFiles = Files.find(path, 10,
-                (p, a) -> a.isRegularFile() && p.toString().endsWith(".txt"));
+        Stream<Path> streamTxtFiles = Files.find(path, 10, (p, a) -> a.isRegularFile() && p.toString().endsWith(".txt"));
         try (streamTxtFiles) {
             System.out.println("Txt files in directory:");
-            streamTxtFiles.forEach(System.out::println);
+            streamTxtFiles.forEach(p -> System.out.println(" ".concat(p.toString())));
         }
     }
 

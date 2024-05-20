@@ -15,7 +15,7 @@ import java.util.List;
 public class GorillaSerializer {
 
     /**
-     * Serialization: object to stream/file.
+     * Serialization: write objects to stream/file
      */
     void saveToFile(List<Gorilla> gorillas, File file) throws IOException {
         var fileOutputStream = new FileOutputStream(file);
@@ -29,7 +29,7 @@ public class GorillaSerializer {
     }
 
     /**
-     * Deserialization: stream/file to object.
+     * Deserialization: convert stream/file to objects
      */
     List<Gorilla> readFromFile(File file) throws IOException, ClassNotFoundException {
         List<Gorilla> gorillas = new ArrayList<>();

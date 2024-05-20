@@ -16,6 +16,7 @@ public class ReadAttributes {
 
         System.out.println("Is directory: " + attributes.isDirectory());
         System.out.println("Creation time: " + attributes.creationTime());
+        System.out.println("Last modified time: " + attributes.lastModifiedTime());
         System.out.println("Size: " + attributes.size() + " bytes");
 
     }
