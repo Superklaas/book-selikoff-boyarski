@@ -21,7 +21,7 @@ public class ParsingNumbers {
 
         // CURRENCY: decimal separator & currency symbol cf. chosen locale
 
-        Number usaCurrency = NumberFormat.getCurrencyInstance(Locale.US).parse("€123.45");
+        Number usaCurrency = NumberFormat.getCurrencyInstance(Locale.US).parse("$123.45");
         System.out.println(usaCurrency);
 
     }

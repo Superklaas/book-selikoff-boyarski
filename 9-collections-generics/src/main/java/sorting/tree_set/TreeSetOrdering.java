@@ -6,7 +6,6 @@ import java.util.TreeSet;
 public class TreeSetOrdering {
 
     public static void main(String[] args) {
-//        TreeSet<Rabbit> rabbits = new TreeSet<>((r1,r2) -> r1.name().compareTo(r2.name()));
         TreeSet<Rabbit> rabbits = new TreeSet<>(Comparator.comparing(Rabbit::name));
         rabbits.add(new Rabbit("Grand Kallé"));
         rabbits.add(new Rabbit("Papa Wendo"));

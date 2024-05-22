@@ -11,9 +11,10 @@ public class Question18 {
         s += false;
         System.out.println(s);
         System.out.println(s == "2cfalse");
+        System.out.println("--------");
 
         // similar to example in book
-        String rat1 = "r" + "a" + "t" + 1;
+        String rat1 = "r" + "a" + "t" + 1; // compile-time constant
         String rat2 = "";
         rat2 += "r";
         rat2 += "a";

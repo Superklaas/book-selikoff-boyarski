@@ -11,6 +11,7 @@ public final class Animal {
      * Constructor with parameter List<String> favoriteFoods.
      * This list will become the value assigned to the instance variable favoriteFoods.
      * To prevent this list from being modified, a defensive copy is made in the constructor.
+     * When changes happen to this list outside Animal class, the instance variable favoriteFoods won't reflect these changes.
      */
     public Animal(List<String> favoriteFoods) {
         if (favoriteFoods == null || favoriteFoods.isEmpty()) {

@@ -9,23 +9,20 @@ public class ParsingDates {
 
     public static void main(String[] args) {
 
-        DateTimeFormatter formatterLong = DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG);
-        DateTimeFormatter formatterShort = DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT);
-
         // formatter.parse(String) using formatter with FormatStyle.LONG
-        TemporalAccessor localDate1 = formatterLong.parse("March 30, 2024");
+        TemporalAccessor localDate1 = DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG).parse("March 30, 2024");
         System.out.println(localDate1);
 
         // formatter.parse(String) using formatter with FormatStyle.SHORT
-        TemporalAccessor localDate2 = formatterShort.parse("3/30/24");
+        TemporalAccessor localDate2 = DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT).parse("3/30/24");
         System.out.println(localDate2);
 
         // temporalAccessor.parse(String) using formatter with FormatStyle.SHORT
-        LocalDate localDate3 = LocalDate.parse("3/30/24", formatterShort);
+        LocalDate localDate3 = LocalDate.parse("3/30/24", DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT));
         System.out.println(localDate3);
 
         // temporalAccessor.parse(String) using formatter with FormatStyle.LONG
-        LocalDate localDate4 = LocalDate.parse("March 30, 2024", formatterLong);
+        LocalDate localDate4 = LocalDate.parse("March 30, 2024", DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG));
         System.out.println(localDate4);
 
 
