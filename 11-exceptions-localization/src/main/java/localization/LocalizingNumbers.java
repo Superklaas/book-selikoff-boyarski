@@ -7,13 +7,15 @@ public class LocalizingNumbers {
 
     public static void main(String[] args) {
 
+        System.out.println(Locale.getDefault());
+
         // NUMBERS: getInstance(Locale) or getNumberInstance(Locale)
 
         NumberFormat germanNumberFormatter = NumberFormat.getInstance(Locale.GERMANY);
         String germanNumber = germanNumberFormatter.format(123.45);
         System.out.println(germanNumber);
 
-        NumberFormat chineseNumberFormatter = NumberFormat.getNumberInstance(Locale.CHINA);
+        NumberFormat chineseNumberFormatter = NumberFormat.getNumberInstance();
         String chineseNumber = chineseNumberFormatter.format(123.45);
         System.out.println(chineseNumber);
 

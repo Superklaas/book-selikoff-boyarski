@@ -20,8 +20,8 @@ public class ChronoUnitsBetween {
         // LocalDate
         var date1 = LocalDate.of(2024, 2, 4);
         var date2 = LocalDate.of(2024, 5, 2);
-        long yearsBetween = ChronoUnit.YEARS.between(date1, date2);
-        long monthsBetween = ChronoUnit.MONTHS.between(date1, date2);
+        long yearsBetween = ChronoUnit.YEARS.between(date2, date1);
+        long monthsBetween = ChronoUnit.MONTHS.between(date2, date1);
         long weeksBetween = ChronoUnit.WEEKS.between(date1, date2);
         long daysBetween = ChronoUnit.DAYS.between(date1, date2);
         System.out.printf("Years between: %d; Months between: %d; Weeks between: %d; Days between: %d%n",
